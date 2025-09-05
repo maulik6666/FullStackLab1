@@ -1,13 +1,15 @@
-import { useState } from 'react'
 import Header from './components/Header';
+import EmployeeDirectory from './components/EmployeeDirectory';
 import './App.css'
+import { employees } from './data/employee';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
      <Header />
+     <main>
+      <EmployeeDirectory employeeData={employees} />
+     </main>
     </>
   )
 }
