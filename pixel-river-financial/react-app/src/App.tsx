@@ -1,7 +1,8 @@
 import Header from './components/Header';
 import EmployeeDirectory from './components/EmployeeDirectory';
-import './App.css'
 import { employees } from './data/employee';
+import Footer from './components/footer';
+import './App.css'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
      <main>
       <EmployeeDirectory employeeData={employees} />
      </main>
+     <Footer />
     </>
   )
 }
