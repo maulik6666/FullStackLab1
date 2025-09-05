@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Department } from '../data/employee';
+import './EmployeeDirectory.css';
 
 interface EmployeeDirectoryProps {
   employeeData: Department;

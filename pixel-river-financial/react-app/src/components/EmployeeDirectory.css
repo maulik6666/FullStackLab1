@@ -1,0 +1,30 @@
+#employee-directory h2 {
+    text-align: center;
+    color: #444;
+}
+
+.department {
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Border around each department */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.department h4 {
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.department ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.department li {
+    background-color: #f9f9f9;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
