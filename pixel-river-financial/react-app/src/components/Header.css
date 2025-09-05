@@ -1,10 +1,7 @@
-.app-header {
+header {
     background-color: #f4f4f4;
     padding: 20px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 nav {
@@ -17,4 +14,11 @@ nav {
 
 .logo img {
     height: 50px;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
 }
