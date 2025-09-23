@@ -1,0 +1,152 @@
+{
+  "roles": [
+    {
+      "title": "CEO/Chair of Board",
+      "name": "Jo-Anne Sinclair"
+    },
+    {
+      "title": "COO/VP Operations",
+      "name": "Jackson Smith"
+    },
+    {
+      "title": "CFO/VP Administration",
+      "name": "Susan Thomas"
+    },
+    {
+      "title": "VP Client Services",
+      "name": "Richa Kaur"
+    },
+    {
+      "title": "CIO",
+      "name": "Josee Benjamin"
+    },
+    {
+      "title": "VP Sales & Marketing",
+      "name": "Vincent Grey"
+    },
+    {
+      "title": "Director Financial and Audit Svcs",
+      "name": "Rupa Kharki"
+    },
+    {
+      "title": "Director Human Resources",
+      "name": "Xun Kuang"
+    },
+    {
+      "title": "Director Legal Services/General Counsel",
+      "name": "Stien Pedersen"
+    },
+    {
+      "title": "Director Information Technology",
+      "name": "Sandra Bear"
+    },
+    {
+      "title": "Director Information Security and CISSO",
+      "name": "Gus Blue"
+    },
+    {
+      "title": "Director Accounting",
+      "name": "Sam Kong"
+    },
+    {
+      "title": "Director Physical Security",
+      "name": "Valentine Smith"
+    },
+    {
+      "title": "Director Facilities",
+      "name": "Mariya Kaperski"
+    },
+    {
+      "title": "Manager, Business Continuity and Disaster Recovery",
+      "name": "Abd al-Hamid Alami"
+    },
+    {
+      "title": "Manager, Internal Audit",
+      "name": "Victoria Gray"
+    },
+    {
+      "title": "Chief Architect",
+      "name": "Cheryl Guru"
+    },
+    {
+      "title": "Manager, Security Architecture",
+      "name": "Jean Ngoy"
+    },
+    {
+      "title": "Solution Architect, Online Banking",
+      "name": "Kris Gold"
+    },
+    {
+      "title": "Manager, Application Solutions",
+      "name": "Isaac Smith"
+    },
+    {
+      "title": "Lead Developer, Online Banking",
+      "name": "Payton Frost"
+    },
+    {
+      "title": "Manager, Operational Risk",
+      "name": "Samantha Nettle"
+    },
+    {
+      "title": "Manager, Vendor Relations",
+      "name": "Yolanda Ferreira"
+    },
+    {
+      "title": "Manager, Purchasing",
+      "name": "Samir Hassan"
+    },
+    {
+      "title": "Manager, Communications",
+      "name": "Yuna Aikawa"
+    },
+    {
+      "title": "Manager Customer Experience and Community Eng.",
+      "name": "Jonathan Carberry"
+    },
+    {
+      "title": "Manager of Sales",
+      "name": "Roland Wei"
+    },
+    {
+      "title": "Manager, Marketing",
+      "name": "Pran Singh"
+    },
+    {
+      "title": "Business Analyst, Online Banking",
+      "name": "Linda Analyst"
+    },
+    {
+      "title": "Manager, Contract Management",
+      "name": "Esra Sedge"
+    },
+    {
+      "title": "Manager, Compliance Management",
+      "name": "Pranee Tan"
+    },
+    {
+      "title": "Manager IT End User Service Desk",
+      "name": "Karmen Spruce"
+    },
+    {
+      "title": "Manager IT End User Computing",
+      "name": "Haydar Katirci"
+    },
+    {
+      "title": "Manager IT Telecom and Infrastructure",
+      "name": "Jill Harkness"
+    },
+    {
+      "title": "Manager, Data Center and Hosting Services",
+      "name": "Tim Morrison"
+    },
+    {
+      "title": "Manager of IT Risk Management",
+      "name": "Aleksandr Milosevic"
+    },
+    {
+      "title": "Manager IT, project management office",
+      "name": "Jim Wingnut"
+    }
+  ]
+}
