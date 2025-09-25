@@ -2,55 +2,68 @@
   "roles": [
     {
       "title": "CEO/Chair of Board",
-      "name": "Jo-Anne Sinclair"
+      "name": "Jo-Anne Sinclair",
+      "description": "a chief executive officer, the highest-ranking person in a company or other institution, ultimately responsible for making managerial decisions."
     },
     {
       "title": "COO/VP Operations",
-      "name": "Jackson Smith"
+      "name": "Jackson Smith",
+      "description": "The chief operating officer (COO) is responsible for executing and implementing the operational directives set by the CEO and the board of directors."
     },
     {
       "title": "CFO/VP Administration",
-      "name": "Susan Thomas"
+      "name": "Susan Thomas",
+      "description": "a chief financial officer, a senior executive with responsibility for the financial affairs of a corporation or other institution. The vice president of administration position is responsible for directing all of the administrative functions of the corporation in accordance with industry standards, where applicable, regulatory agencies, as appropriate and company objectives and policies."
     },
     {
       "title": "VP Client Services",
-      "name": "Richa Kaur"
+      "name": "Richa Kaur",
+      "description": "responsible for the Consumer Banking division performing a variety of roles including lending, investing, risk management, marketing, and technology. Their team provides a suite of solutions to help our retail customers meet their financial goals. Also responsible for the Commercial Banking Division performing a variety of roles including lending, investing, risk management, marketing, and technology. Their team provides a suite of solutions to help our retail customers meet their financial goals."
     },
     {
       "title": "CIO",
-      "name": "Josee Benjamin"
+      "name": "Josee Benjamin",
+      "description": "Chief Information Officer (CIO), chief digital information officer (CDIO) or information technology (IT) director is a job title commonly given to the most senior executive in an bank responsible for the traditional information technology and computer systems that support bank goals."
     },
     {
       "title": "VP Sales & Marketing",
-      "name": "Vincent Grey"
+      "name": "Vincent Grey",
+      "description": "are responsible for the overall strategic marketing plans for an entire organization (or lines of business and brands within an organization) in order to attract potential customers and retain existing ones."
     },
     {
       "title": "Director Financial and Audit Svcs",
-      "name": "Rupa Kharki"
+      "name": "Rupa Kharki",
+      "description": "sometimes called a compliance manager is to make sure that a company is conducting its business in full compliance with all national and international laws and regulations that pertain to its particular industry, as well as professional standards, accepted business practices."
     },
     {
       "title": "Director Human Resources",
-      "name": "Xun Kuang"
+      "name": "Xun Kuang",
+      "description": "or HR may be responsible for a number of job duties related to organizational development, recruitment and staffing, employment law, performance management, employee relations, and compensation and benefits."
     },
     {
       "title": "Director Legal Services/General Counsel",
-      "name": "Stien Pedersen"
+      "name": "Stien Pedersen",
+      "description": "is the senior executive managing legal affairs for the company."
     },
     {
       "title": "Director Information Technology",
-      "name": "Sandra Bear"
+      "name": "Sandra Bear",
+      "description": "manages the IT infrastructure, operations, and services; and how it enables businesses/individuals to access and make use of data and services."
     },
     {
       "title": "Director Information Security and CISSO",
-      "name": "Gus Blue"
+      "name": "Gus Blue",
+      "description": "A chief information security officer (CISO) is the senior-level executive within an organization responsible for establishing and maintaining the bank security vision, strategy, and program to ensure information assets and technologies are adequately protected."
     },
     {
       "title": "Director Accounting",
-      "name": "Sam Kong"
+      "name": "Sam Kong",
+      "description": "is responsible for in analysis and reconciliation of accounts and in development and implementation of accounting policies, procedures and controls."
     },
     {
       "title": "Director Physical Security",
-      "name": "Valentine Smith"
+      "name": "Valentine Smith",
+      "description": "The Director of Physical Security is responsible for identifying, assessing, and integrating physical security operations, technology, and policy solutions at the organization."
     },
     {
       "title": "Director Facilities",
@@ -58,11 +71,13 @@
     },
     {
       "title": "Manager, Business Continuity and Disaster Recovery",
-      "name": "Abd al-Hamid Alami"
+      "name": "Abd al-Hamid Alami",
+      "description": "Develop, maintain, or implement business continuity and disaster recovery strategies and solutions, including risk assessments, business impact analyses, strategy selection, and documentation of business continuity and disaster recovery procedures."
     },
     {
       "title": "Manager, Internal Audit",
-      "name": "Victoria Gray"
+      "name": "Victoria Gray",
+      "description": "A key part of this role is performing full audits, including risk management, control management, and assessing financial reliability. The audit processes ensure that compliance is met within all the company's systems."
     },
     {
       "title": "Chief Architect",
@@ -70,7 +85,8 @@
     },
     {
       "title": "Manager, Security Architecture",
-      "name": "Jean Ngoy"
+      "name": "Jean Ngoy",
+      "description": "plays a crucial role in designing and overseeing the implementation of security measures for an organization's information systems. They ensure that the systems are designed and built to be resistant to potential threats while remaining compliant with security policies and regulations."
     },
     {
       "title": "Solution Architect, Online Banking",
@@ -86,7 +102,8 @@
     },
     {
       "title": "Manager, Operational Risk",
-      "name": "Samantha Nettle"
+      "name": "Samantha Nettle",
+      "description": "is responsible for monitoring, handling, and measuring operational and economic risk exposures in order to minimize risk and place appropriate controls in place."
     },
     {
       "title": "Manager, Vendor Relations",
@@ -94,7 +111,8 @@
     },
     {
       "title": "Manager, Purchasing",
-      "name": "Samir Hassan"
+      "name": "Samir Hassan",
+      "description": "is responsible for leading all global procurement efforts to efficiently and effectively enable spend owners such as business units and functional partners to maximize the value they receive from suppliers to meet their objectives."
     },
     {
       "title": "Manager, Communications",
@@ -102,15 +120,18 @@
     },
     {
       "title": "Manager Customer Experience and Community Eng.",
-      "name": "Jonathan Carberry"
+      "name": "Jonathan Carberry",
+      "description": "The major goal of CEM is to foster customer loyalty through high-quality interactions at each step. Customer experience managers are the people responsible for improving the experiences customers have with organizations, with the goal of increasing customer satisfaction."
     },
     {
       "title": "Manager of Sales",
-      "name": "Roland Wei"
+      "name": "Roland Wei",
+      "description": "lead a sales team by providing guidance, training, and mentorship, setting sales quotas and goals, creating sales plans, analyzing data, assigning sales territories and building their team."
     },
     {
       "title": "Manager, Marketing",
-      "name": "Pran Singh"
+      "name": "Pran Singh",
+      "description": "are responsible for developing, implementing and executing strategic marketing plans for an entire organization (or lines of business and brands within an organization) in order to attract potential customers and retain existing ones."
     },
     {
       "title": "Business Analyst, Online Banking",
@@ -126,23 +147,28 @@
     },
     {
       "title": "Manager IT End User Service Desk",
-      "name": "Karmen Spruce"
+      "name": "Karmen Spruce",
+      "description": "is responsible for managing daily operations of the service desk, managing the service desk team, representing the team to other elements of the organization, and helping to ensure that the service desk is constantly developing and improving."
     },
     {
       "title": "Manager IT End User Computing",
-      "name": "Haydar Katirci"
+      "name": "Haydar Katirci",
+      "description": "delivers operational day-to-day support for the operations of end-user computing services organization wide, in collaboration with third-party vendors."
     },
     {
       "title": "Manager IT Telecom and Infrastructure",
-      "name": "Jill Harkness"
+      "name": "Jill Harkness",
+      "description": "Responsible for the daily operations of infrastructure, telecom, and infrastructure support staff. Works with other business and IT teams to ensure that services and infrastructure needs are met."
     },
     {
       "title": "Manager, Data Center and Hosting Services",
-      "name": "Tim Morrison"
+      "name": "Tim Morrison",
+      "description": "responsible for the day to day operations of the datacenter, contracting cloud services, and ensuring the high availability of data to the stakeholders."
     },
     {
       "title": "Manager of IT Risk Management",
-      "name": "Aleksandr Milosevic"
+      "name": "Aleksandr Milosevic",
+      "description": "responsible for identifying, assessing, and mitigating risks that could potentially jeopardize an organization's assets, profitability, or existence."
     },
     {
       "title": "Manager IT, project management office",
