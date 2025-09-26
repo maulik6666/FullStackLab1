@@ -4,8 +4,8 @@ import './Header.css';
 
 const Header: React.FC = () => {
     return (
-        <header>
-            <nav>
+        <header className='app-header'>
+            <nav className="navbar">
                 <div className="logo">
                     <img src="/src/assets/logo.png" alt="Pixel River Financial Logo" />
                 </div>

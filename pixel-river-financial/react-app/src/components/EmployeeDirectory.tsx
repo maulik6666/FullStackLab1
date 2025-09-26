@@ -10,6 +10,11 @@ const EmployeeDirectory: React.FC<EmployeeDirectoryProps> = ({ employeeData }) =
     return (
         <section id="employee-directory">
             <h2>Employee Directory</h2>
+            <div className="search-bar">
+                <input type="text" placeholder="Search by name or department..."
+                value=""
+                />
+            </div>
             {Object.keys(employeeData).map(department => (
                 <div key={department} className="department">
                     <h4>{department}</h4>
