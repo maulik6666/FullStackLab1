@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import managementData from '../data/management.json';
+import './Organization.css';
 
 interface Role {
     title: string;

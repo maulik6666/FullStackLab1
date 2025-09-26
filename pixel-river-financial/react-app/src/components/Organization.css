@@ -1,0 +1,15 @@
+.organization-page {
+  padding: 2rem;
+}
+
+.organization-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background-color: #f0f0f0;
+}
+
+.role-description {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #555;
+}
