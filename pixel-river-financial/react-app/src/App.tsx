@@ -5,6 +5,7 @@ import Organization from './components/Organization';
 import { employees } from './data/employee';
 import Footer from './components/footer';
 import './App.css'
+import './index.css'
 
 function App() {
   return (
