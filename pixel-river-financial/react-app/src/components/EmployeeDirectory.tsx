@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Department } from '../data/employee';
 import './EmployeeDirectory.css';
+import { useEntryForm } from '../hooks/useEntryForm';
 
 interface EmployeeDirectoryProps {
   employeeData: Department;
@@ -8,7 +9,8 @@ interface EmployeeDirectoryProps {
 
 const EmployeeDirectory: React.FC<EmployeeDirectoryProps> = ({ employeeData }) => {
         const [searchTerm, setSearchTerm] = React.useState('');
-
+        const { formValues, handleChange, handleSubmit, error, successMsg } = useEntryForm("employee");
+        
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
     };
