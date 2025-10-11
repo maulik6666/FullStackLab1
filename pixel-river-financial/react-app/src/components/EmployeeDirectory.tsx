@@ -44,6 +44,17 @@ const EmployeeDirectory: React.FC<EmployeeDirectoryProps> = ({ employeeData }) =
     return (
         <section id="employee-directory">
             <h2>Employee Directory</h2>
+
+            {/* Form to add new employee*/}
+            <form onSubmit={handleSubmit} className="entry-form">
+                <h3>Add New Employee</h3>
+                <input type="text" name="name" placeholder="Employee Name" value={formValues.name} onChange={handleChange} required />
+                <input type="text" name="department" placeholder="Department" value={formValues.department} onChange={handleChange} required />
+                <button type="submit">Add Employee</button>
+                {error && <p className="error">{error}</p>}
+                {successMsg && <p className="success">{successMsg}</p>}
+            </form>
+
             <div className="search-bar">
                 Search: <input type="text" placeholder="Search by name or department..."
                 value={searchTerm} onChange={handleSearchChange}
