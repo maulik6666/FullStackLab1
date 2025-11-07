@@ -1,15 +1,97 @@
-.organization-page {
-  padding: 2rem;
+#organization {
+  background: #f7f9fc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.organization-page h2 {
+#organization h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  background-color: #f0f0f0;
+  color: #1a3d7c;
+  margin-bottom: 1rem;
 }
 
-.role-description {
-  margin-top: 1rem;
-  font-style: italic;
-  color: #555;
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.entry-form h3 {
+  margin: 0;
+  color: #333;
+}
+
+.entry-form input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.entry-form button {
+  align-self: flex-start;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.entry-form button:hover {
+  background-color: #145ab6;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #28a745;
+  font-size: 0.9rem;
+}
+
+.search-bar {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.search-bar input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.role-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.role-list li {
+  background-color: #fff;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #e3e3e3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role-list li:hover {
+  background-color: #f0f6ff;
 }
