@@ -1,77 +1,100 @@
-import React from 'react';
-import type { Department } from '../data/employee';
-import './EmployeeDirectory.css';
-import { useEntryForm } from '../hooks/useEntryForm';
+import React, { useEffect, useState } from "react";
+import { employeeRepository, type Employee } from "../repositories/employeeRepository";
+import "./EmployeeDirectory.css";
 
-interface EmployeeDirectoryProps {
-  employeeData: Department;
-}
+const EmployeeDirectory: React.FC = () => {
+  const [employees, setEmployees] = useState<Employee[]>([]);
+  const [name, setName] = useState("");
+  const [department, setDepartment] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-const EmployeeDirectory: React.FC<EmployeeDirectoryProps> = ({ employeeData }) => {
-        const [searchTerm, setSearchTerm] = React.useState('');
-        const { formValues, handleChange, handleSubmit, error, successMsg } = useEntryForm("employee");
-        
-    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(event.target.value);
-    };
+  // fetch data from backend
+  const loadEmployees = async () => {
+    try {
+      setLoading(true);
+      const data = await employeeRepository.getAll();
+      setEmployees(data);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    const filteredEmployeeData = () => {
-        if (!searchTerm) return employeeData;
+  useEffect(() => {
+    loadEmployees();
+  }, []);
 
-        const lowercaseSearch = searchTerm.toLowerCase();
-        const newfilteredData: Department = {};
+  // add new employee
+  const handleAdd = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      await employeeRepository.addEmployee(department, name);
+      setSuccess("Employee added successfully!");
+      setName("");
+      setDepartment("");
+      await loadEmployees(); // refresh list
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
 
-        for(const department in employeeData) {
-            const departmentLower = department.toLowerCase();
-            const employeesInDeptartment = employeeData[department];
-            
-            const departmentMatches = departmentLower.includes(lowercaseSearch);
-            const filteredEmployees = employeesInDeptartment.filter(employee =>
-                employee.toLowerCase().includes(lowercaseSearch)
-            );
+  // search filter
+  const filteredEmployees = employees.filter(
+    (e) =>
+      e.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      e.department.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-            if (departmentMatches || filteredEmployees.length > 0) {
-                if (departmentMatches) {
-                    newfilteredData[department] = employeesInDeptartment;
-                } else {
-                    newfilteredData[department] = filteredEmployees;
-                }
-            }
-        }
-        return newfilteredData;
-    };
-    
-    return (
-        <section id="employee-directory">
-            <h2>Employee Directory</h2>
+  if (loading) return <p>Loading employees...</p>;
 
-            {/* Form to add new employee*/}
-            <form onSubmit={handleSubmit} className="entry-form">
-                <h3>Add New Employee</h3>
-                <input type="text" name="name" placeholder="Employee Name" value={formValues.name} onChange={handleChange} required />
-                <input type="text" name="department" placeholder="Department" value={formValues.department} onChange={handleChange} required />
-                <button type="submit">Add Employee</button>
-                {error && <p className="error">{error}</p>}
-                {successMsg && <p className="success">{successMsg}</p>}
-            </form>
+  return (
+    <section id="employee-directory">
+      <h2>Employee Directory</h2>
 
-            <div className="search-bar">
-                Search: <input type="text" placeholder="Search by name or department..."
-                value={searchTerm} onChange={handleSearchChange}
-                />
-            </div>
-            {Object.keys(filteredEmployeeData()).map(department => (
-                <div key={department} className="department">
-                    <h4>{department}</h4>
-                    <ul>
-                        {filteredEmployeeData()[department].map(employee => (
-                            <li key={employee}>{employee}</li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
-        </section>
-    );
+      <form onSubmit={handleAdd} className="entry-form">
+        <h3>Add New Employee</h3>
+        <input
+          type="text"
+          placeholder="Employee Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Department"
+          value={department}
+          onChange={(e) => setDepartment(e.target.value)}
+          required
+        />
+        <button type="submit">Add Employee</button>
+        {error && <p className="error">{error}</p>}
+        {success && <p className="success">{success}</p>}
+      </form>
+
+      <div className="search-bar">
+        Search:{" "}
+        <input
+          type="text"
+          placeholder="Search by name or department..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+
+      <ul className="employee-list">
+        {filteredEmployees.map((emp) => (
+          <li key={emp.id}>
+            {emp.name} — {emp.department}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 };
 
 export default EmployeeDirectory;

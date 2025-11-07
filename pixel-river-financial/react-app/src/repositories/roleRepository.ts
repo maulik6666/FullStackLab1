@@ -1,16 +1,28 @@
-import managementData from '../data/management.json';
+const BASE = "http://localhost:3000/api";
 
-let roleData = [...managementData.roles];
+export type Role = { id: number; title: string };
 
 export const roleRepository = {
-  getAll: () => roleData,
-
-  addRole: (title: string, name: string) => {
-    if (!title.trim() || !name.trim()) return;
-    roleData.push({ title, name });
+  async getAll(): Promise<Role[]> {
+    const res = await fetch(`${BASE}/roles`);
+    if (!res.ok) throw new Error("Failed to fetch roles");
+    return res.json();
   },
-
-  isRoleFilled: (title: string) => {
-    return roleData.some(role => role.title === title);
+  async addRole(title: string) {
+    const res = await fetch(`${BASE}/roles`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title }),
+    });
+    if (!res.ok) throw new Error("Failed to add role");
+    return res.json();
+  },
+  async isRoleFilled(title: string): Promise<boolean> {
+    const url = new URL(`${BASE}/roles/is-filled`);
+    url.searchParams.set("title", title);
+    const res = await fetch(url.toString());
+    if (!res.ok) throw new Error("Failed to check role");
+    const data = await res.json();
+    return !!data.filled;
   },
 };

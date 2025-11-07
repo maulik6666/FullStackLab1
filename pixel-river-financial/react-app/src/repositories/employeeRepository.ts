@@ -1,19 +1,29 @@
-import { employees } from '../data/employee';
+const BASE = "http://localhost:3000/api";
 
-let employeeData = { ...employees };
+export type Employee = {
+  id: number;
+  name: string;
+  department: string;
+  roleId?: number | null;
+};
 
 export const employeeRepository = {
-  getAll: () => employeeData,
-
-  addEmployee: (department: string, name: string) => {
-    if (!department) return;
-    if (!employeeData[department]) employeeData[department] = [];
-    employeeData[department].push(name);
+  async getAll(): Promise<Employee[]> {
+    const res = await fetch(`${BASE}/employees`);
+    if (!res.ok) throw new Error("Failed to fetch employees");
+    return res.json();
   },
-
-  removeEmployee: (department: string, name: string) => {
-    if (employeeData[department]) {
-      employeeData[department] = employeeData[department].filter(emp => emp !== name);
-    }
-  }
+  async addEmployee(department: string, name: string, roleId?: number | null) {
+    const res = await fetch(`${BASE}/employees`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ department, name, roleId: roleId ?? null }),
+    });
+    if (!res.ok) throw new Error("Failed to add employee");
+    return res.json();
+  },
+  async removeEmployee(id: number) {
+    const res = await fetch(`${BASE}/employees/${id}`, { method: "DELETE" });
+    if (!res.ok) throw new Error("Failed to delete employee");
+  },
 };

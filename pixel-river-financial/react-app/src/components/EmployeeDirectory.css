@@ -1,35 +1,91 @@
+#employee-directory {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
 #employee-directory h2 {
-    text-align: center;
-    color: #444;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.department {
-    margin-bottom: 20px;
-    border: 1px solid #ccc; /* Border around each department */
-    padding: 10px;
-    border-radius: 5px;
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-.department h4 {
-    color: #0056b3;
-    border-bottom: 2px solid #0056b3;
-    padding-bottom: 5px;
-    margin-top: 0;
+.entry-form h3 {
+  margin-bottom: 5px;
+  color: #444;
 }
 
-.department ul {
-    list-style-type: none;
-    padding: 0;
+.entry-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-.department li {
-    background-color: #f9f9f9;
-    padding: 8px;
-    margin-bottom: 5px;
-    border-radius: 3px;
+.entry-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.entry-form button:hover {
+  background: #0056b3;
 }
 
 .search-bar {
-    margin-bottom: 5px;
-    width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.search-bar input {
+  padding: 6px;
+  width: 60%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.employee-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.employee-list li {
+  background: white;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
+.employee-list li:nth-child(even) {
+  background: #f3f3f3;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: #27ae60;
+  font-size: 0.9rem;
 }
