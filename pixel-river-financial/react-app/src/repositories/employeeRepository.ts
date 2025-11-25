@@ -8,22 +8,44 @@ export type Employee = {
 };
 
 export const employeeRepository = {
-  async getAll(): Promise<Employee[]> {
-    const res = await fetch(`${BASE}/employees`);
+  async getAll(token?: string): Promise<Employee[]> {
+    const res = await fetch(`${BASE}/employees`, {
+      headers: token
+        ? {
+            Authorization: `Bearer ${token}`,
+          }
+        : undefined,
+      credentials: "include",
+    });
     if (!res.ok) throw new Error("Failed to fetch employees");
     return res.json();
   },
-  async addEmployee(department: string, name: string, roleId?: number | null) {
+
+  async addEmployee(
+    department: string,
+    name: string,
+    roleId?: number | null,
+    token?: string
+  ) {
     const res = await fetch(`${BASE}/employees`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
       body: JSON.stringify({ department, name, roleId: roleId ?? null }),
+      credentials: "include",
     });
     if (!res.ok) throw new Error("Failed to add employee");
     return res.json();
   },
-  async removeEmployee(id: number) {
-    const res = await fetch(`${BASE}/employees/${id}`, { method: "DELETE" });
+
+  async removeEmployee(id: number, token?: string) {
+    const res = await fetch(`${BASE}/employees/${id}`, {
+      method: "DELETE",
+      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      credentials: "include",
+    });
     if (!res.ok) throw new Error("Failed to delete employee");
   },
 };
