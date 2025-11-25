@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { employeeRepository, type Employee } from "../repositories/employeeRepository";
 import "./EmployeeDirectory.css";
+import { useAuth } from "@clerk/clerk-react";
 
 const EmployeeDirectory: React.FC = () => {
+  const { getToken } = useAuth();
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [name, setName] = useState("");
   const [department, setDepartment] = useState("");
@@ -15,7 +17,8 @@ const EmployeeDirectory: React.FC = () => {
   const loadEmployees = async () => {
     try {
       setLoading(true);
-      const data = await employeeRepository.getAll();
+      const token = await getToken();
+      const data = await employeeRepository.getAll(token || undefined);
       setEmployees(data);
     } catch (err: any) {
       setError(err.message);
@@ -32,7 +35,8 @@ const EmployeeDirectory: React.FC = () => {
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await employeeRepository.addEmployee(department, name);
+      const token = await getToken();
+      await employeeRepository.addEmployee(department, name, undefined, token || undefined);
       setSuccess("Employee added successfully!");
       setName("");
       setDepartment("");

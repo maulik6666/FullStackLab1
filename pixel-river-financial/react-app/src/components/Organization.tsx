@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { roleRepository, type Role } from "../repositories/roleRepository";
 import "./Organization.css";
+import { useAuth } from "@clerk/clerk-react";
 
 const Organization: React.FC = () => {
+  const { getToken } = useAuth();
   const [roles, setRoles] = useState<Role[]>([]);
   const [title, setTitle] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -13,7 +15,8 @@ const Organization: React.FC = () => {
   const loadRoles = async () => {
     try {
       setLoading(true);
-      const data = await roleRepository.getAll();
+      const token = await getToken();
+      const data = await roleRepository.getAll(token || undefined);
       setRoles(data);
     } catch (err: any) {
       setError(err.message);
@@ -29,7 +32,8 @@ const Organization: React.FC = () => {
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await roleRepository.addRole(title);
+      const token = await getToken();
+      await roleRepository.addRole(title, token || undefined);
       setTitle("");
       setSuccess("Role added successfully!");
       await loadRoles(); // refresh list
